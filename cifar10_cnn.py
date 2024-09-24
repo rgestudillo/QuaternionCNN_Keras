@@ -81,7 +81,7 @@ if not data_augmentation:
               shuffle=True)
 else:
     print('Using real-time data augmentation.')
-    # This will do preprocessing and realtime data augmentation:
+    # This will do preprocessing and realtime data augmentation:q
     datagen = ImageDataGenerator(
         featurewise_center=False,  # set input mean to 0 over the dataset
         samplewise_center=False,  # set each sample mean to 0

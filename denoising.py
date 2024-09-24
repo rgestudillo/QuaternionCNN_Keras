@@ -146,7 +146,7 @@ for e in range(epochs):
             Image.fromarray(image.astype(np.uint8)).save('outputq1/'+str(e)+'_'+str(batch_counter)+'.jpg')
             '''
     psnr_mtr = psnr_mtr/batch_counter
-    print '[epoch%s] train loss:%s psnr:%s'%((e), loss, psnr_mtr)
+    # print '[epoch%s] train loss:%s psnr:%s'%((e), loss, psnr_mtr)
     while test_counter * test_size+3500 < len(Img):
         path_true = Val[test_counter*test_size:min((test_counter+1)*test_size,1000)]
         path_true = ['validation_split/'+i for i in path_true]
@@ -163,7 +163,7 @@ for e in range(epochs):
             Image.fromarray(image.astype(np.uint8)).save('output_testq1/'+str(e)+'_'+str(test_counter)+'.jpg')
             '''
     psnr_test = psnr_test/1000
-    print '[epoch%s|] test psnr:%s'%((e), psnr_test)
+    # print '[epoch%s|] test psnr:%s'%((e), psnr_test)
     if psnr_test>maxpsnr:
         maxpsnr = psnr_test
         autoencoder.save_weights('checkpointq/best.h5')
